@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hemant ❤️ Kriti — Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --peach: #F7D9C4;
+    --blush: #F2B5C8;
+    --rose: #E8899A;
+    --ivory: #FFF8F0;
+    --lavender: #E8D5F5;
+    --lavender-mid: #C9A8E0;
+    --gold: #C9964A;
+    --gold-light: #E8C87A;
+    --gold-dark: #A07030;
+    --text-dark: #3A2A1A;
+    --text-mid: #6B4A30;
+    --text-light: #9A7A5A;
+    --white: #FFFFFF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--ivory);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* FLORAL SVG ELEMENTS */
+  .floral-bg { position: absolute; width: 100%; height: 100%; top: 0; left: 0; overflow: hidden; pointer-events: none; }
+
+  /* ===================== HERO ===================== */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(160deg, #FFF0EC 0%, #FDE8F0 35%, #EDE0F8 70%, #FFF0EC 100%);
+  }
+
+  .hero-petals {
+    position: absolute; inset: 0;
+    animation: floatBg 30s ease-in-out infinite alternate;
+  }
+
+  @keyframes floatBg {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-20px) scale(1.03); }
+  }
+
+  .petal {
+    position: absolute;
+    border-radius: 50% 0 50% 0;
+    opacity: 0.25;
+    animation: drift linear infinite;
+  }
+
+  @keyframes drift {
+    0% { transform: translateY(-60px) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.25; }
+    90% { opacity: 0.2; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .hero-tag {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: block;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.3s forwards;
+  }
+
+  .hero-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--text-dark);
+    opacity: 0;
+    animation: fadeUp 1.2s ease 0.5s forwards;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-names em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .heart-divider {
+    font-size: 1.8rem;
+    display: block;
+    margin: 0.2rem 0;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.7s forwards, pulse 2s ease-in-out 1.7s infinite;
+    color: var(--rose);
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+
+  .hero-poem {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-mid);
+    margin-top: 1.5rem;
+    line-height: 1.8;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.9s forwards;
+  }
+
+  .gold-line {
+    width: 80px;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1.5rem auto;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.1s forwards;
+  }
+
+  .hero-date {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    color: var(--text-light);
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.2s forwards;
+  }
+
+  .cta-btn {
+    margin-top: 2.5rem;
+    display: inline-block;
+    padding: 0.9rem 2.5rem;
+    border: 1.5px solid var(--gold);
+    border-radius: 50px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    text-decoration: none;
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(6px);
+    transition: all 0.4s ease;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.4s forwards;
+    cursor: pointer;
+  }
+
+  .cta-btn:hover {
+    background: var(--gold);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201,150,74,0.3);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 2s forwards;
+  }
+
+  .scroll-hint span {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+
+  .scroll-mouse {
+    width: 22px;
+    height: 36px;
+    border: 1.5px solid var(--text-light);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+  }
+
+  .scroll-dot {
+    width: 4px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 2px;
+    animation: scrollDown 1.5s ease-in-out infinite;
+  }
+
+  @keyframes scrollDown {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    60% { transform: translateY(10px); opacity: 0.3; }
+  }
+
+  /* Corner floral SVG */
+  .corner-floral {
+    position: absolute;
+    width: clamp(180px, 30vw, 320px);
+    opacity: 0.55;
+    pointer-events: none;
+  }
+  .corner-tl { top: 0; left: 0; transform: none; }
+  .corner-tr { top: 0; right: 0; transform: scaleX(-1); }
+  .corner-bl { bottom: 0; left: 0; transform: scaleY(-1); }
+  .corner-br { bottom: 0; right: 0; transform: scale(-1,-1); }
+
+  /* ===================== INVITE SECTION ===================== */
+  #invite {
+    padding: 7rem 2rem;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  #invite::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-light), var(--rose), var(--lavender-mid), transparent);
+  }
+
+  .section-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 1.2rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+
+  .invite-card {
+    max-width: 700px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #FFF8F5, #FDF0F8, #F8F0FF);
+    border: 1px solid rgba(201,150,74,0.25);
+    border-radius: 24px;
+    padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem);
+    position: relative;
+    box-shadow: 0 20px 60px rgba(232,137,154,0.1), 0 4px 20px rgba(0,0,0,0.04);
+  }
+
+  .invite-card::before {
+    content: '✦';
+    position: absolute;
+    top: 1.5rem; left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold-light);
+    font-size: 1.2rem;
+  }
+
+  .invite-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+    font-weight: 400;
+    line-height: 1.9;
+    color: var(--text-mid);
+  }
+
+  .invite-text strong {
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+
+  .invite-families {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(201,150,74,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .family-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+  }
+
+  .family-amp {
+    color: var(--gold);
+    font-size: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* reveal on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===================== EVENTS ===================== */
+  #events {
+    padding: 7rem 2rem;
+    background: linear-gradient(180deg, #FDF6FF 0%, #FFF5F8 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #events .section-header { text-align: center; margin-bottom: 4rem; }
+
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .event-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(232,213,245,0.6);
+    border-radius: 20px;
+    padding: 2rem 1.8rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    cursor: default;
+  }
+
+  .event-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    border-radius: 20px 20px 0 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .event-card.ev-1::before { background: linear-gradient(90deg, var(--peach), var(--gold-light)); }
+  .event-card.ev-2::before { background: linear-gradient(90deg, var(--blush), var(--lavender-mid)); }
+  .event-card.ev-3::before { background: linear-gradient(90deg, var(--gold-light), #F4A261); }
+  .event-card.ev-4::before { background: linear-gradient(90deg, var(--lavender-mid), var(--rose)); }
+
+  .event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(201,150,74,0.15), 0 6px 20px rgba(0,0,0,0.06);
+    border-color: rgba(201,150,74,0.4);
+  }
+
+  .event-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .ev-1 .event-icon { background: linear-gradient(135deg, #FDE8D0, #FAD5B5); }
+  .ev-2 .event-icon { background: linear-gradient(135deg, #F9D8E8, #E8CFF5); }
+  .ev-3 .event-icon { background: linear-gradient(135deg, #FDE8C0, #FCD5A0); }
+  .ev-4 .event-icon { background: linear-gradient(135deg, #E8D5F5, #F2B5C8); }
+
+  .event-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
+  }
+
+  .event-date {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 0.8rem;
+  }
+
+  .event-divider {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    margin-bottom: 0.8rem;
+  }
+
+  .event-time {
+    font-size: 0.85rem;
+    color: var(--rose);
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .event-venue {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+
+  .event-badge {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.3rem 0.9rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .ev-1 .event-badge { background: rgba(247,217,196,0.5); color: #8A5020; border: 1px solid rgba(201,150,74,0.3); }
+  .ev-2 .event-badge { background: rgba(232,213,245,0.5); color: #6030A0; border: 1px solid rgba(201,168,224,0.3); }
+  .ev-3 .event-badge { background: rgba(253,232,192,0.5); color: #8A6010; border: 1px solid rgba(201,150,74,0.3); }
+  .ev-4 .event-badge { background: rgba(242,181,200,0.4); color: #90203A; border: 1px solid rgba(232,137,154,0.3); }
+
+  /* ===================== VENUE ===================== */
+  #venue {
+    padding: 7rem 2rem;
+    background: var(--text-dark);
+    position: relative;
+    overflow: hidden;
+    color: var(--ivory);
+  }
+
+  .venue-bg-pattern {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 20% 50%, rgba(201,150,74,0.08) 0%, transparent 60%),
+                      radial-gradient(circle at 80% 30%, rgba(232,137,154,0.08) 0%, transparent 60%),
+                      radial-gradient(circle at 50% 80%, rgba(201,168,224,0.06) 0%, transparent 50%);
+  }
+
+  .venue-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 3rem auto 0;
+  }
+
+  @media (max-width: 640px) {
+    .venue-grid { grid-template-columns: 1fr; }
+  }
+
+  .venue-card {
+    border: 1px solid rgba(201,150,74,0.25);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(4px);
+    text-align: center;
+    transition: border-color 0.4s ease, background 0.4s ease;
+  }
+
+  .venue-card:hover {
+    border-color: rgba(201,150,74,0.5);
+    background: rgba(255,255,255,0.07);
+  }
+
+  .venue-card-icon {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .venue-card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--gold-light);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .venue-card-address {
+    font-size: 0.88rem;
+    color: rgba(255,248,240,0.6);
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+  }
+
+  .venue-events-list {
+    margin-top: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .venue-event-chip {
+    display: inline-block;
+    padding: 0.25rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid rgba(201,150,74,0.3);
+    color: var(--gold-light);
+    font-weight: 400;
+  }
+
+  .venue-header { text-align: center; }
+  .venue-header .section-tag { color: var(--gold-light); }
+  .venue-header .section-title { color: var(--ivory); }
+
+  .venue-poem {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    font-style: italic;
+    color: rgba(255,248,240,0.65);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  /* ===================== CLOSING ===================== */
+  #closing {
+    padding: 7rem 2rem 5rem;
+    background: linear-gradient(160deg, #FFF5F8 0%, #F5EEFF 50%, #FFF5F0 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .closing-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .closing-title em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .closing-poem {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--text-mid);
+    max-width: 560px;
+    margin: 0 auto 3rem;
+    line-height: 1.9;
+  }
+
+  .closing-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--gold-dark);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .closing-dates {
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+  }
+
+  .final-cta {
+    display: inline-block;
+    padding: 1.1rem 3rem;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border-radius: 50px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 30px rgba(201,150,74,0.3);
+  }
+
+  .final-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(201,150,74,0.4);
+  }
+
+  .floral-bottom-border {
+    margin-top: 5rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(201,150,74,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    color: var(--gold-light);
+    font-size: 1.2rem;
+    opacity: 0.7;
+  }
+
+  .footer-text {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    letter-spacing: 0.15em;
+    margin-top: 1.5rem;
+  }
+
+  /* Decorative elements */
+  .sparkle-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+    color: var(--gold-light);
+    opacity: 0.8;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+  }
+
+  .sparkle-row::before, .sparkle-row::after {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-light));
+  }
+  .sparkle-row::after { background: linear-gradient(90deg, var(--gold-light), transparent); }
+
+  /* Timeline connector for events */
+  .events-timeline-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold-light);
+    border: 2px solid white;
+    box-shadow: 0 0 0 3px rgba(201,150,74,0.2);
+    position: absolute;
+    top: 2rem;
+    right: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .events-grid { grid-template-columns: 1fr; max-width: 400px; }
+    .corner-floral { width: 130px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+
+  <!-- Floating petals -->
+  <div class="hero-petals" id="petals-container"></div>
+
+  <!-- Corner florals SVG -->
+  <svg class="corner-floral corner-tl" viewBox="0 0 300 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.9">
+      <!-- Large rose -->
+      <circle cx="60" cy="60" r="32" fill="#F2B5C8" opacity="0.5"/>
+      <circle cx="60" cy="60" r="22" fill="#E8899A" opacity="0.5"/>
+      <circle cx="60" cy="60" r="12" fill="#D4607A" opacity="0.4"/>
+      <!-- Petals around large rose -->
+      <ellipse cx="28" cy="50" rx="16" ry="10" fill="#F7D9C4" transform="rotate(-20 28 50)" opacity="0.7"/>
+      <ellipse cx="50" cy="26" rx="16" ry="10" fill="#F7D9C4" transform="rotate(20 50 26)" opacity="0.7"/>
+      <ellipse cx="82" cy="38" rx="14" ry="9" fill="#F2B5C8" transform="rotate(50 82 38)" opacity="0.6"/>
+      <ellipse cx="75" cy="82" rx="14" ry="9" fill="#F2B5C8" transform="rotate(-40 75 82)" opacity="0.6"/>
+      <ellipse cx="30" cy="80" rx="14" ry="9" fill="#F7D9C4" transform="rotate(40 30 80)" opacity="0.6"/>
+      <!-- Smaller blooms -->
+      <circle cx="130" cy="45" r="18" fill="#E8D5F5" opacity="0.5"/>
+      <circle cx="130" cy="45" r="10" fill="#C9A8E0" opacity="0.4"/>
+      <ellipse cx="108" cy="38" rx="12" ry="7" fill="#E8D5F5" transform="rotate(-30 108 38)" opacity="0.6"/>
+      <ellipse cx="150" cy="35" rx="12" ry="7" fill="#E8D5F5" transform="rotate(30 150 35)" opacity="0.6"/>
+      <ellipse cx="145" cy="60" rx="11" ry="7" fill="#C9A8E0" transform="rotate(-20 145 60)" opacity="0.5"/>
+      <!-- Leaves/stems -->
+      <path d="M60 92 Q80 130 50 160 Q30 180 20 220" stroke="#A8C870" stroke-width="2.5" fill="none" opacity="0.5"/>
+      <path d="M62 110 Q90 115 110 100" stroke="#A8C870" stroke-width="2" fill="none" opacity="0.4"/>
+      <ellipse cx="95" cy="95" rx="20" ry="9" fill="#B8D880" transform="rotate(-40 95 95)" opacity="0.35"/>
+      <path d="M130 63 Q160 100 140 140" stroke="#A8C870" stroke-width="2" fill="none" opacity="0.4"/>
+      <!-- Tiny buds -->
+      <circle cx="180" cy="80" r="8" fill="#F7D9C4" opacity="0.5"/>
+      <circle cx="175" cy="90" r="5" fill="#E8899A" opacity="0.4"/>
+      <circle cx="20" cy="160" r="10" fill="#F2B5C8" opacity="0.4"/>
+      <circle cx="30" cy="200" r="7" fill="#E8D5F5" opacity="0.4"/>
+      <!-- Gold dots -->
+      <circle cx="105" cy="125" r="3" fill="#E8C87A" opacity="0.6"/>
+      <circle cx="155" cy="110" r="2.5" fill="#E8C87A" opacity="0.5"/>
+      <circle cx="50" cy="145" r="2" fill="#E8C87A" opacity="0.5"/>
+    </g>
+  </svg>
+
+  <svg class="corner-floral corner-tr" viewBox="0 0 300 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.9">
+      <circle cx="60" cy="60" r="32" fill="#F2B5C8" opacity="0.5"/>
+      <circle cx="60" cy="60" r="22" fill="#E8899A" opacity="0.5"/>
+      <circle cx="60" cy="60" r="12" fill="#D4607A" opacity="0.4"/>
+      <ellipse cx="28" cy="50" rx="16" ry="10" fill="#F7D9C4" transform="rotate(-20 28 50)" opacity="0.7"/>
+      <ellipse cx="50" cy="26" rx="16" ry="10" fill="#F7D9C4" transform="rotate(20 50 26)" opacity="0.7"/>
+      <ellipse cx="82" cy="38" rx="14" ry="9" fill="#F2B5C8" transform="rotate(50 82 38)" opacity="0.6"/>
+      <ellipse cx="75" cy="82" rx="14" ry="9" fill="#F2B5C8" transform="rotate(-40 75 82)" opacity="0.6"/>
+      <ellipse cx="30" cy="80" rx="14" ry="9" fill="#F7D9C4" transform="rotate(40 30 80)" opacity="0.6"/>
+      <circle cx="130" cy="45" r="18" fill="#E8D5F5" opacity="0.5"/>
+      <circle cx="130" cy="45" r="10" fill="#C9A8E0" opacity="0.4"/>
+      <ellipse cx="108" cy="38" rx="12" ry="7" fill="#E8D5F5" transform="rotate(-30 108 38)" opacity="0.6"/>
+      <ellipse cx="150" cy="35" rx="12" ry="7" fill="#E8D5F5" transform="rotate(30 150 35)" opacity="0.6"/>
+      <path d="M60 92 Q80 130 50 160 Q30 180 20 220" stroke="#A8C870" stroke-width="2.5" fill="none" opacity="0.5"/>
+      <path d="M62 110 Q90 115 110 100" stroke="#A8C870" stroke-width="2" fill="none" opacity="0.4"/>
+      <ellipse cx="95" cy="95" rx="20" ry="9" fill="#B8D880" transform="rotate(-40 95 95)" opacity="0.35"/>
+      <circle cx="20" cy="160" r="10" fill="#F2B5C8" opacity="0.4"/>
+      <circle cx="105" cy="125" r="3" fill="#E8C87A" opacity="0.6"/>
+    </g>
+  </svg>
+
+  <svg class="corner-floral corner-bl" viewBox="0 0 300 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.9">
+      <circle cx="60" cy="60" r="32" fill="#E8D5F5" opacity="0.5"/>
+      <circle cx="60" cy="60" r="22" fill="#C9A8E0" opacity="0.5"/>
+      <circle cx="60" cy="60" r="12" fill="#A070C0" opacity="0.4"/>
+      <ellipse cx="28" cy="50" rx="16" ry="10" fill="#F7D9C4" transform="rotate(-20 28 50)" opacity="0.7"/>
+      <ellipse cx="50" cy="26" rx="16" ry="10" fill="#E8D5F5" transform="rotate(20 50 26)" opacity="0.7"/>
+      <ellipse cx="82" cy="38" rx="14" ry="9" fill="#F2B5C8" transform="rotate(50 82 38)" opacity="0.6"/>
+      <ellipse cx="75" cy="82" rx="14" ry="9" fill="#E8D5F5" transform="rotate(-40 75 82)" opacity="0.6"/>
+      <circle cx="155" cy="50" r="15" fill="#F7D9C4" opacity="0.5"/>
+      <circle cx="155" cy="50" r="8" fill="#E8A07A" opacity="0.4"/>
+      <path d="M60 92 Q80 130 50 160 Q30 180 20 220" stroke="#A8C870" stroke-width="2.5" fill="none" opacity="0.5"/>
+      <circle cx="105" cy="125" r="3" fill="#E8C87A" opacity="0.6"/>
+    </g>
+  </svg>
+
+  <svg class="corner-floral corner-br" viewBox="0 0 300 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.9">
+      <circle cx="60" cy="60" r="32" fill="#F7D9C4" opacity="0.5"/>
+      <circle cx="60" cy="60" r="22" fill="#E8A880" opacity="0.5"/>
+      <circle cx="60" cy="60" r="12" fill="#C87050" opacity="0.4"/>
+      <ellipse cx="28" cy="50" rx="16" ry="10" fill="#F7D9C4" transform="rotate(-20 28 50)" opacity="0.7"/>
+      <ellipse cx="50" cy="26" rx="16" ry="10" fill="#F2B5C8" transform="rotate(20 50 26)" opacity="0.7"/>
+      <ellipse cx="82" cy="38" rx="14" ry="9" fill="#F7D9C4" transform="rotate(50 82 38)" opacity="0.6"/>
+      <ellipse cx="75" cy="82" rx="14" ry="9" fill="#F2B5C8" transform="rotate(-40 75 82)" opacity="0.6"/>
+      <circle cx="140" cy="48" r="16" fill="#E8D5F5" opacity="0.5"/>
+      <circle cx="140" cy="48" r="9" fill="#C9A8E0" opacity="0.4"/>
+      <path d="M60 92 Q80 130 50 160" stroke="#A8C870" stroke-width="2.5" fill="none" opacity="0.5"/>
+      <circle cx="95" cy="120" r="3" fill="#E8C87A" opacity="0.6"/>
+    </g>
+  </svg>
+
+  <div class="hero-content">
+    <span class="hero-tag">With joyful hearts, we invite you to celebrate</span>
+    <h1 class="hero-names">
+      Hemant
+      <span class="heart-divider">❤</span>
+      Kriti
+    </h1>
+    <div class="gold-line"></div>
+    <p class="hero-poem">
+      Two souls, one story —<br>
+      woven in love, blessed by stars,<br>
+      beginning forever.
+    </p>
+    <div class="sparkle-row" style="opacity:0;animation:fadeUp 1s ease 1.3s forwards;">✦ MAY 2025 ✦</div>
+    <a class="cta-btn" href="#invite">Celebrate With Us</a>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ===== INVITATION LETTER ===== -->
+<section id="invite">
+  <div class="reveal">
+    <span class="section-tag">A heartfelt invitation</span>
+    <h2 class="section-title">You are warmly invited</h2>
+    <div class="sparkle-row">✦ ✦ ✦</div>
+  </div>
+
+  <div class="invite-card reveal">
+    <p class="invite-text">
+      With hearts overflowing with love and gratitude,<br>
+      we joyfully invite you to be a part of<br><br>
+      <strong>the wedding celebration of</strong><br><br>
+      <strong>Hemant &amp; Kriti</strong><br><br>
+      As two hearts find their forever home in each other,
+      we seek your blessings, your laughter, and your presence
+      to make these moments truly unforgettable.<br><br>
+      Your warmth will make our celebration complete.
+    </p>
+    <div class="invite-families">
+      <span class="family-name">Son of the families of Pandhari Pandagre</span>
+      <span class="family-amp">&</span>
+      <span class="family-name">Daughter of the families of Deepak Billore</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EVENTS ===== -->
+<section id="events">
+  <div class="section-header reveal">
+    <span class="section-tag">The celebrations</span>
+    <h2 class="section-title">Join us for every beautiful moment</h2>
+    <div class="sparkle-row">✦ ✦ ✦</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--text-light);max-width:480px;margin:0 auto;line-height:1.8;font-size:1.05rem;">
+      Each ceremony is a chapter of our love story — and we want you there for all of them.
+    </p>
+  </div>
+
+  <div class="events-grid">
+
+    <div class="event-card ev-1 reveal" style="transition-delay:0.1s">
+      <div class="events-timeline-dot"></div>
+      <div class="event-icon">🌿</div>
+      <div class="event-name">Khan Mitti</div>
+      <div class="event-date">Friday · 01 May 2026</div>
+      <div class="event-divider"></div>
+      <div class="event-time">Auspicious morning ceremony</div>
+      <div class="event-venue">In House · An intimate family ritual to begin the sacred journey</div>
+      <div class="event-badge">Family Ceremony</div>
+    </div>
+
+    <div class="event-card ev-2 reveal" style="transition-delay:0.2s">
+      <div class="events-timeline-dot"></div>
+      <div class="event-icon">💍</div>
+      <div class="event-name">Engagement & Sangeet</div>
+      <div class="event-date">Sunday · 03 May 2026</div>
+      <div class="event-divider"></div>
+      <div class="event-time">11:00 AM · 7:00 PM onwards</div>
+      <div class="event-venue">Hotel Regal Grand<br>Awadhpuri, Bhopal</div>
+      <div class="event-badge">Engagement + Sangeet</div>
+    </div>
+
+    <div class="event-card ev-3 reveal" style="transition-delay:0.3s">
+      <div class="events-timeline-dot"></div>
+      <div class="event-icon">🌸</div>
+      <div class="event-name">Haldi & Mehndi</div>
+      <div class="event-date">Monday · 04 May 2026</div>
+      <div class="event-divider"></div>
+      <div class="event-time">Daytime celebrations</div>
+      <div class="event-venue">In House · Filled with colour, song & the sweet scent of marigolds</div>
+      <div class="event-badge">Haldi + Mehndi</div>
+    </div>
+
+    <div class="event-card ev-4 reveal" style="transition-delay:0.4s">
+      <div class="events-timeline-dot"></div>
+      <div class="event-icon">✨</div>
+      <div class="event-name">Wedding Night</div>
+      <div class="event-date">Tuesday · 05 May 2026</div>
+      <div class="event-divider"></div>
+      <div class="event-time">An evening to remember</div>
+      <div class="event-venue">Kanta Shrawan Palace<br>Hotel & Wedding Destination, Banquets</div>
+      <div class="event-badge">The Grand Wedding</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== VENUE ===== -->
+<section id="venue">
+  <div class="venue-bg-pattern"></div>
+
+  <div class="venue-header reveal" style="position:relative;">
+    <span class="section-tag">The venues</span>
+    <h2 class="section-title">Where love unfolds</h2>
+    <div class="sparkle-row" style="color:rgba(232,200,122,0.6)">✦ ✦ ✦</div>
+    <p class="venue-poem">
+      From grand halls to intimate courtyards,<br>
+      every space has been chosen with love —<br>
+      worthy of the memories we shall create together.
+    </p>
+  </div>
+
+  <div class="venue-grid">
+    <div class="venue-card reveal" style="transition-delay:0.15s">
+      <span class="venue-card-icon">🏨</span>
+      <div class="venue-card-name">Hotel Regal Grand</div>
+      <div class="venue-card-address">
+        Awadhpuri, Bhopal<br>
+        A grand stage for our most cherished milestones
+      </div>
+      <div class="venue-events-list">
+        <span class="venue-event-chip">Engagement · 03 May</span>
+        <span class="venue-event-chip">Sangeet · 03 May</span>
+      </div>
+    </div>
+
+    <div class="venue-card reveal" style="transition-delay:0.3s">
+      <span class="venue-card-icon">🏰</span>
+      <div class="venue-card-name">Kanta Shrawan Palace</div>
+      <div class="venue-card-address">
+        Hotel & Wedding Destination<br>
+        Banquets · Where the grandest night of our lives awaits
+      </div>
+      <div class="venue-events-list">
+        <span class="venue-event-chip">Wedding Night · 05 May</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Decorative bottom floral strip -->
+  <div style="text-align:center;margin-top:4rem;opacity:0.3;">
+    <svg width="320" height="30" viewBox="0 0 320 30" fill="none">
+      <path d="M0 15 Q40 5 80 15 Q120 25 160 15 Q200 5 240 15 Q280 25 320 15" stroke="#E8C87A" stroke-width="1" fill="none"/>
+      <circle cx="40" cy="8" r="3" fill="#E8C87A"/>
+      <circle cx="80" cy="15" r="2.5" fill="#F2B5C8"/>
+      <circle cx="120" cy="22" r="3" fill="#E8D5F5"/>
+      <circle cx="160" cy="15" r="4" fill="#E8C87A"/>
+      <circle cx="200" cy="8" r="2.5" fill="#F2B5C8"/>
+      <circle cx="240" cy="15" r="3" fill="#E8D5F5"/>
+      <circle cx="280" cy="22" r="2.5" fill="#E8C87A"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===== CLOSING ===== -->
+<section id="closing">
+
+  <!-- Floating background circles -->
+  <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;">
+    <div style="position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(242,181,200,0.15),transparent);top:-100px;right:-100px;"></div>
+    <div style="position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,224,0.12),transparent);bottom:-80px;left:-80px;"></div>
+  </div>
+
+  <div style="position:relative;z-index:1;">
+    <div class="reveal">
+      <span class="section-tag">With love & gratitude</span>
+      <h2 class="closing-title">
+        Come, be part of our<br>
+        <em>forever story</em>
+      </h2>
+    </div>
+
+    <div class="reveal" style="transition-delay:0.15s">
+      <p class="closing-poem">
+        Your presence will be our greatest blessing —<br>
+        your laughter our favourite music,<br>
+        your love the light that fills our new home.<br>
+        We cannot wait to celebrate with you.
+      </p>
+    </div>
+
+    <div class="reveal" style="transition-delay:0.25s">
+      <div class="gold-line" style="opacity:1;"></div>
+      <div class="closing-names">Hemant ❤️ Kriti</div>
+      <div class="closing-dates">01 May – 05 May · 2025</div>
+      <a class="final-cta" href="#events">Join Us in Celebration</a>
+    </div>
+
+    <div class="floral-bottom-border reveal" style="transition-delay:0.4s">
+      🌸 ✦ 🌺 ✦ 🌸 ✦ 🌺 ✦ 🌸
+    </div>
+
+    <p class="footer-text reveal" style="transition-delay:0.5s">
+      Together, our families joyfully await your presence & blessings
+    </p>
+  </div>
+</section>
+
+<script>
+  // Floating petals
+  const petalContainer = document.getElementById('petals-container');
+  const petalColors = ['#F2B5C8','#F7D9C4','#E8D5F5','#C9A8E0','#E8C87A','#F0C8D8'];
+
+  for (let i = 0; i < 22; i++) {
+    const petal = document.createElement('div');
+    petal.className = 'petal';
+    const size = 8 + Math.random() * 18;
+    const color = petalColors[Math.floor(Math.random() * petalColors.length)];
+    const left = Math.random() * 100;
+    const delay = Math.random() * 18;
+    const duration = 14 + Math.random() * 16;
+    petal.style.cssText = `
+      width: ${size}px;
+      height: ${size * 0.7}px;
+      background: ${color};
+      left: ${left}%;
+      top: -30px;
+      animation-duration: ${duration}s;
+      animation-delay: -${delay}s;
+    `;
+    petalContainer.appendChild(petal);
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Smooth scroll for CTA
+  document.querySelector('.cta-btn').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('#invite').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  document.querySelector('.final-cta').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('#events').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>
+</body>
+</html>
